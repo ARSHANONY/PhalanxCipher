@@ -1,47 +1,63 @@
 <div align="center">
 
-# 🛡️ PhalanxCipher
+# 🛡️ PhalanxCipher  
 ### A hybrid, multilingual, level-based encryption engine built with pure Python
 
-<img src="https://img.shields.io/badge/Status-Alpha-orange?style=flat-square"/>
 <img src="https://img.shields.io/badge/Language-Python%203-blue?style=flat-square"/>
 <img src="https://img.shields.io/badge/Encryption-Level%20Based-green?style=flat-square"/>
 <img src="https://img.shields.io/badge/Multilingual-English%20%7C%20Persian%20%7C%20Digits-purple?style=flat-square"/>
+<img src="https://img.shields.io/badge/Status-Alpha-orange?style=flat-square"/>
 <img src="https://img.shields.io/badge/Color%20Output-Terminal%20Only-red?style=flat-square"/>
 
 </div>
 
 ---
 
-## ✨ What is PhalanxCipher?
-
-**PhalanxCipher** is an experimental encryption algorithm designed to protect mixed-language text using layered, reversible obfuscation.
-
-Instead of just rotating letters, it:
-- Reverses the entire string
-- Applies a mathematical *position × level* jump
-- Uses a **bounce-back** system for overflow
-- Supports Persian 🇮🇷, English 🇬🇧 and Numbers 🔢
-- Is designed for future extensions like GUI, Telegram Bot, or API mode
-
-> 🧪 No cryptographic libraries are used — this is an educational and creative cipher, not a secure cryptographic replacement.
+> 🔐 **PhalanxCipher** is a smart, multilingual text cipher designed for creative obfuscation.  
+> It’s more than Caesar or ROT13 — it’s Level-based, reverse-first, bounce-shifted, and Farsi‑friendly 🇮🇷
 
 ---
 
-## 🔐 How Encryption Works
+## ✨ Key Features
 
-### For each character:
+- 🔢 Level-based encryption logic
+- 🔁 Reverses the full string before encoding
+- 🔄 Uses bounce-back instead of wrap-around
+- 🌐 Supports Persian (32), English (26), and Digits (10)
+- 🎨 Color-coded decryption (Green, Yellow, Red, Purple)
+- 🧠 Smart guessing engine for decryption accuracy
+- 🧪 Fully educational, minimal dependencies
 
-1. The input text is first **reversed**
-2. Each letter's position in its alphabet is multiplied by the **encryption level**
-3. A jump is made forward by this amount
-4. If the jump exceeds the end of the alphabet:
-   - Instead of wrapping to the start (like Caesar),
-   - It **bounces backward** from the end (Z → Y → X ...)
+---
 
-#### Example:  
-```txt
-Original:    Apple
-Reversed:    elppA
-Level:       2
-Encrypt:     ozzxM
+## 🔍 Language Modes
+
+| Mode | Description                      |
+|------|----------------------------------|
+| `E`  | English characters only 🇬🇧        |
+| `F`  | Persian (Farsi) characters only 🇮🇷 |
+| `MIX`| Mixed: English + Persian + Digits 🌐 |
+
+> ⚠️ **Note:** Colored output is only visible in terminals that support ANSI escape codes.  
+> Future versions will include full GUI and web visualization.
+
+---
+
+## 🧠 How Encryption Works
+
+1. Input text is **reversed**
+2. For each letter:
+   - Find its index in the relevant alphabet
+   - Multiply that index by the selected **Level**
+   - Jump forward in the alphabet
+   - If it goes past the end, it **bounces back** from the edge
+3. Non-alphabet characters (e.g., symbols, emojis) remain unchanged
+
+---
+
+## 🚀 Getting Started
+
+### 🔧 Requirements
+
+```bash
+pip install colorama
