@@ -61,7 +61,7 @@ def lvcoding_advanced(text, level):
     # گام ۲: رمزنگاری
     return ''.join(shift_char_advanced(ch, level) for ch in reversed_text)
 
-# اجرای تست
+# اجرای 
 if __name__ == "__main__":
     level = int(input("🔢 Level را وارد کن: "))
     text = input("📝 متن را وارد کن: ")
