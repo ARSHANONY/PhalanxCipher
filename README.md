@@ -1,3 +1,4 @@
+
 <div align="center">
 
 # 🛡️ PhalanxCipher  
@@ -61,3 +62,88 @@
 
 ```bash
 pip install colorama
+````
+
+---
+
+### 🔐 Encrypt a Message
+
+```bash
+python phalanx_encrypt.py
+```
+
+You will be prompted:
+
+```text
+🔢 Enter Level: 4
+✉️  Enter Message: Hello ۲۰۲۵ سلام
+```
+
+---
+
+### 🔓 Decrypt a Message
+
+```bash
+python phalanx_decrypt.py
+```
+
+You will be asked for:
+
+* 🌐 Language mode (`E`, `F`, or `MIX`)
+* 🔢 Level used for encryption
+* 🔒 Encrypted text
+
+
+
+## 📈 Roadmap
+
+| Milestone | Description                             |
+| --------- | --------------------------------------- |
+| ✅ v1.0    | Core encryption & smart CLI decryption  |
+| ⏳ v1.1    | Save/load from file + flags             |
+| 🔜 v2.0   | GUI / Web Interface / Telegram Bot      |
+| 🔒 v3.0   | Key-based system + multi-pass ciphering |
+
+---
+
+## 📁 Project Structure
+
+```bash
+PhalanxCipher/
+├── phalanx_encrypt.py   # Encryptor logic
+├── phalanx_decrypt.py   # Decryption + output visualization
+├── LICENSE              # MIT License
+└── README.md            # This file
+```
+
+---
+
+## 📄 License
+
+This project is open-source under the **[MIT License](LICENSE)**.
+You are free to use, copy, modify, and distribute it — just mention the original author.
+
+---
+
+## 🤝 Contributing
+
+Suggestions, ideas, or pull requests are always welcome! 💡
+
+* 🍴 Fork this repo
+* 📥 Submit pull requests
+* 🐞 Report bugs or open ideas in Issues
+* ⭐ Give it a Star if you like it!
+
+---
+
+## 👨‍💻 Created By
+
+* 💡 Algorithm & Design: **Arshan**
+
+> “Encryption doesn’t have to be boring.
+> With PhalanxCipher, you encrypt with structure, multilingual magic, and futuristic logic.”
+
+```
+
+
+```
