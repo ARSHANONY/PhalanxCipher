@@ -1,149 +1,158 @@
 
 <div align="center">
 
-# 🛡️ PhalanxCipher  
-### A hybrid, multilingual, level-based encryption engine built with pure Python
+<h1>🛡️ PhalanxCipher</h1>
+<h3>A military-grade, one-way, multilingual hashing system — handcrafted with precision</h3>
 
-<img src="https://img.shields.io/badge/Language-Python%203-blue?style=flat-square"/>
-<img src="https://img.shields.io/badge/Encryption-Level%20Based-green?style=flat-square"/>
-<img src="https://img.shields.io/badge/Multilingual-English%20%7C%20Persian%20%7C%20Digits-purple?style=flat-square"/>
-<img src="https://img.shields.io/badge/Status-Alpha-orange?style=flat-square"/>
-<img src="https://img.shields.io/badge/Color%20Output-Terminal%20Only-red?style=flat-square"/>
+<img src="https://img.shields.io/badge/Language-Python%203.10+-blue.svg?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Encryption-Level%20Based%20Shift-green?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Hash-Type%20One--Way-orange?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Output-25%20Characters-purple?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Persian%20Support-Full-red?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Security-Non%20Reversible-black?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Made%20By-Arshan%20Khalili-yellow?style=for-the-badge"/>
 
 </div>
 
 ---
 
-> 🔐 **PhalanxCipher** is a smart, multilingual text cipher designed for creative obfuscation.  
-> It’s more than Caesar or ROT13 — it’s Level-based, reverse-first, bounce-shifted, and Farsi‑friendly 🇮🇷
+> 🔐 **PhalanxCipher** isn’t just a hash function. It’s a philosophy of secure, irreversible, and multilingual encryption.  
+> Designed from scratch without relying on existing cryptographic algorithms — PhalanxCipher is your secret weapon for one-way data protection.
 
 ---
 
-## ✨ Key Features
+## 💡 What Makes It Special?
 
-- 🔢 Level-based encryption logic
-- 🔁 Reverses the full string before encoding
-- 🔄 Uses bounce-back instead of wrap-around
-- 🌐 Supports Persian (32), English (26), and Digits (10)
-- 🎨 Color-coded decryption (Green, Yellow, Red, Purple)
-- 🧠 Smart guessing engine for decryption accuracy
-- 🧪 Fully educational, minimal dependencies
-
----
-
-## 🔍 Language Modes
-
-| Mode | Description                      |
-|------|----------------------------------|
-| `E`  | English characters only 🇬🇧        |
-| `F`  | Persian (Farsi) characters only 🇮🇷 |
-| `MIX`| Mixed: English + Persian + Digits 🌐 |
-
-> ⚠️ **Note:** Colored output is only visible in terminals that support ANSI escape codes.  
-> Future versions will include full GUI and web visualization.
+| Feature                       | Description                                                                 |
+|------------------------------|-----------------------------------------------------------------------------|
+| 🔁 Reverse-first Obfuscation | Disorients predictable patterns & prevents dictionary attacks               |
+| 🔄 Level-based Shifting      | Each character is multiplied by a level × position — personalized per user |
+| 🔃 Circular Shift Logic      | Ensures infinite entropy flow; no "wrap-around" failures                    |
+| 🧬 Language-aware Design     | Native support for **Farsi**, **English**, and **Digits**                   |
+| 🔒 Fixed-length Output       | Exactly 25 characters every time — ideal for tokens and identity hashes     |
+| 🧠 Custom Compression Table  | Final step uses a private 48-char mapping table (non-standard)              |
+| 🚫 Zero Dependencies         | No libraries, no frameworks, no SHA or MD5 — pure logic                     |
 
 ---
 
-## 🧠 How Encryption Works
+## 🔍 How It Works (Behind the Scenes)
 
-1. Input text is **reversed**
-2. For each letter:
-   - Find its index in the relevant alphabet
-   - Multiply that index by the selected **Level**
-   - Jump forward in the alphabet
-   - If it goes past the end, it **bounces back** from the edge
-3. Non-alphabet characters (e.g., symbols, emojis) remain unchanged
+1. **Input Reversal** — Every message is flipped to destroy input structure.
+2. **Indexed Character Shifting** —  
+   - Each character’s index is multiplied by the encryption `level`
+   - Circular shifting applies per character set (English: 26, Persian: 32, Digits: 10)
+3. **Custom Table Mapping** —  
+   - The transformed string + level number is converted to a large number
+   - That number is broken into 25 characters using a **non-public** 48-symbol table
+
+🧠 This layered approach ensures:
+- High entropy
+- Irreversibility
+- Language flexibility
+- Unique final outputs per user, per text, per level
 
 ---
 
-## 🚀 Getting Started
+## 🚨 Why It’s Unbreakable (Practically)
 
-### 🔧 Requirements
+| Attack Type          | Result                                                                 |
+|----------------------|------------------------------------------------------------------------|
+| 🔓 Brute-force       | Requires guessing level + matching custom mapping manually             |
+| 🧠 Dictionary attack | Useless — input reversal + custom table ensures mismatch                |
+| 🔍 Reverse-engineer  | Not possible without full understanding of shift logic & table encoding |
+| 🧪 Hash collisions   | Extremely rare due to personalized shifting                            |
+| 🛑 Decryption        | There is no decryption — it’s a **one-way black box**                  |
+
+> ✅ PhalanxCipher is mathematically deterministic but computationally irreversible.  
+> That’s the power of custom cryptography.
+
+---
+
+## 🧪 Example Session
 
 ```bash
-pip install colorama
+$ python phalanxH.py
+
+🔢 Enter level: 777
+📝 Enter text: arshan2025
+
+✅ Final Hash: @9ZJ#U6LMPX0R9&KQWA#9OFAZ
 ````
 
----
-
-### 🔐 Encrypt a Message
-
-```bash
-python phalanx_encrypt.py
-```
-
-You will be prompted:
-
-```text
-🔢 Enter Level: 4
-✉️  Enter Message: Hello ۲۰۲۵ سلام
-```
+* No matter how many times you hash this text with same level → same result
+* Change even **1 letter** or **1 level** → completely different 25-character hash
 
 ---
 
-### 🔓 Decrypt a Message
+## 🧰 Use Cases
 
-```bash
-python phalanx_decrypt.py
-```
-
-You will be asked for:
-
-* 🌐 Language mode (`E`, `F`, or `MIX`)
-* 🔢 Level used for encryption
-* 🔒 Encrypted text
-
-
-
-## 📈 Roadmap
-
-| Milestone | Description                             |
-| --------- | --------------------------------------- |
-| ✅ v1.0    | Core encryption & smart CLI decryption  |
-| ⏳ v1.1    | Save/load from file + flags             |
-| 🔜 v2.0   | GUI / Web Interface / Telegram Bot      |
-| 🔒 v3.0   | Key-based system + multi-pass ciphering |
+* 🔐 Password Hashing (non-reversible storage)
+* 🆔 Token/Session ID Generator
+* 📁 Database Field Obfuscation
+* 📜 Digital Watermarking
+* 🧾 Signature for Mixed-Language Documents
+* 🛠️ Anywhere you need fast, fixed, irreversible hash
 
 ---
 
-## 📁 Project Structure
+## 🔧 Installation
 
 ```bash
+https://github.com/ARSHANONY/PhalanxCipher.git
+cd PhalanxCipher
+python phalanxH.py
+```
+
+> ✅ Compatible with Python 3.10 and above
+> 📦 Requires zero dependencies. No pip install needed.
+
+---
+
+## 📁 File Structure
+
+```
 PhalanxCipher/
-├── phalanx_encrypt.py   # Encryptor logic
-├── phalanx_decrypt.py   # Decryption + output visualization
-├── LICENSE              # MIT License
-└── README.md            # This file
+├── PhalanxH.py       # The main hash function logic
+└── README.md            # You are here
 ```
 
 ---
 
 ## 📄 License
 
-This project is open-source under the **[MIT License](LICENSE)**.
-You are free to use, copy, modify, and distribute it — just mention the original author.
+This project is open-sourced under the **MIT License**.
+You are free to use, modify, distribute, or extend — with attribution.
 
 ---
 
-## 🤝 Contributing
+## ✍️ Creator
 
-Suggestions, ideas, or pull requests are always welcome! 💡
+**Arshan Khalili**
+🧠 Designer of secure, experimental cryptographic structures
 
-* 🍴 Fork this repo
-* 📥 Submit pull requests
-* 🐞 Report bugs or open ideas in Issues
-* ⭐ Give it a Star if you like it!
+> "Real encryption doesn’t rely on standard formulas. It builds new rules from scratch."
 
 ---
 
-## 👨‍💻 Created By
+## 🌟 Show Your Support
 
-* 💡 Algorithm & Design: **Arshan**
+If you find PhalanxCipher useful or inspiring:
 
-> “Encryption doesn’t have to be boring.
-> With PhalanxCipher, you encrypt with structure, multilingual magic, and futuristic logic.”
+* ⭐ Star the repo
+* 🍴 Fork for your own use
+* 🛠️ Contribute ideas
+* 🔐 Add it to your own security projects
+
+---
+
+## 💬 Final Thought
+
+> "In a world flooded with copied ciphers and common crypto,
+> PhalanxCipher dares to be different — and that’s what makes it powerful."
 
 ```
+
+PhalanxCipher
 
 
 ```
